@@ -4,13 +4,17 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["es6", "dom"],
+    "lib": ["es7", "dom"],
     "mapRoot": "./",
     "module": "es6",
     "moduleResolution": "node",
     "outDir": "../dist/out-tsc",
     "sourceMap": true,
     "target": "es5",
+    "types": [
+      "core-js",
+      "node"
+    ],
     "typeRoots": [
       "../node_modules/@types"
     ]
