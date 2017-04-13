@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { API_BASE_URL } from './constants';
 import { RequestBase } from './request-base';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class UserService extends RequestBase {
@@ -21,7 +22,7 @@ export class UserService extends RequestBase {
     var options = new RequestOptions({ headers: headers });
     var login: string = 'email=' + credentials.email + '&password=' + credentials.password;
 
-    return this.http.post('https://rccl-services.herokuapp.com/login', login, options)
+    return this.http.post(`${environment.API_BASE_URL}/login`, login, options)
       .map(res => res.json());
   }
 }

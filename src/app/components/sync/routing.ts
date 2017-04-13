@@ -4,7 +4,7 @@ import { SyncComponent } from './component';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: './index#SyncModule',
     component: SyncComponent
   }
 ];

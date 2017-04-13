@@ -1,7 +1,6 @@
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { IdlePreload, IdlePreloadModule } from '@angularclass/idle-preload';
-//import { MaterialModule } from '@angular/material';
 
 import { EffectsModule } from '@ngrx/effects';
 import { RouterStoreModule } from '@ngrx/router-store';
@@ -13,6 +12,8 @@ import { routes } from './app.routing';
 import { rootReducer } from './reducers';
 import { StoreDevToolsModule } from './components/store-devtools/module';
 import { UserEffects } from './effects/user';
+import { MaterialModule } from '@angular/material';
+import 'hammerjs';
 
 const STORE_DEV_TOOLS_IMPORTS = [];
 // if (ENV === 'development' && !AOT &&
@@ -28,7 +29,7 @@ const STORE_DEV_TOOLS_IMPORTS = [];
 
 export const APP_IMPORTS = [
   EffectsModule.run(UserEffects),
-  //MaterialModule.forRoot(),
+  MaterialModule.forRoot(),
   ReactiveFormsModule,
   IdlePreloadModule.forRoot(), // forRoot ensures the providers are only created once
   RouterModule.forRoot(routes, { useHash: false, preloadingStrategy: IdlePreload }),

@@ -1,8 +1,6 @@
 import { ApplicationRef, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
-import 'hammerjs';
 
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
@@ -27,7 +25,6 @@ import { AppState } from './reducers';
     APP_IMPORTS,
     BrowserModule,
     HttpModule,
-    MaterialModule.forRoot()
   ],
   bootstrap: [AppComponent],
   providers: [APP_PROVIDERS]
