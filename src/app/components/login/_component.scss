@@ -1,0 +1,169 @@
+.my-login{
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white; 
+  transition: opacity .5s;
+
+  div.window-login{
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(74, 74, 74);
+    transition: margin-top 1.2s;
+
+    .presentation-text{
+      color: white;
+      padding: 1em 4em;
+      box-sizing: border-box;
+    }
+
+    .logos-header{
+      padding-top: 1em;
+      padding-bottom: 1em;
+      img{
+        vertical-align: middle;
+        &.rc-logo{
+          width: 22%;
+        }
+        &.white-logo{
+          width: 7%;
+        }
+        &.celebrity-logo{
+          width: 22%; 
+        }
+        &.capitain-logo{
+          width: 15%;
+        }
+        &.azamara-logo{
+          width: 20%;
+        }
+        &.voyage-logo{
+          width: 7%;
+        }
+      }
+
+    }
+
+    .login-region{
+      background-color: white;
+      border: 1px solid #d8caca;
+      border-radius: 0 0 2px 2px;
+      padding: 2em;
+      .input-form {
+        border-bottom: 1px solid #e0d7d7;
+        margin-bottom: .5em;
+
+        input {
+          border:none;
+          padding: .6em;
+          outline: none;
+          width: 100%;
+          text-align: center;
+          box-sizing: border-box;
+        }
+      }
+      .error-alert{
+        padding: .5em;
+        opacity: 0;
+        color:#e81f41;
+        transition: all 250ms;
+        &.show-error{
+          opacity: 1;
+        }
+      }
+      @-moz-keyframes spin {
+          from { -moz-transform: rotate(0deg); }
+          to { -moz-transform: rotate(360deg); }
+      }
+      @-webkit-keyframes spin {
+          from { -webkit-transform: rotate(0deg); }
+          to { -webkit-transform: rotate(360deg); }
+      }
+      @keyframes spin {
+          from {transform:rotate(0deg);}
+          to {transform:rotate(360deg);}
+      }
+      .btn.btn-default{
+        background-color: #e0d7d7;
+        border:none;
+        box-shadow: 0 0 1px 0px #333;
+        cursor:pointer;
+        color: black;
+        outline: none;
+        padding: .5em 1.6em;
+        transition: all 250ms;
+
+        &.loading{
+          border-radius: 100%;
+          height: 3.9em;
+          width: 3.9em;
+          border: 3px dashed white;
+          background: #079fdb;
+          -webkit-animation-name: spin;
+          -webkit-animation-duration: 4000ms;
+          -webkit-animation-iteration-count: infinite;
+          -webkit-animation-timing-function: linear;
+          -moz-animation-name: spin;
+          -moz-animation-duration: 4000ms;
+          -moz-animation-iteration-count: infinite;
+          -moz-animation-timing-function: linear;
+          -ms-animation-name: spin;
+          -ms-animation-duration: 4000ms;
+          -ms-animation-iteration-count: infinite;
+          -ms-animation-timing-function: linear;
+          &:hover{
+            box-shadow: 0 0 0 0;
+          }
+          span {
+            display: none;
+          }
+        }
+
+        &:hover{
+          box-shadow: 0 2px 2px 0px #333;
+        }
+      }
+      
+    }
+  }
+
+  &.authenticated{
+    pointer-events: none;
+    opacity: 0;
+    div.window-login {
+      margin-top: -150%;
+    }  
+  }
+}  
+@media only screen and (min-width: 320px){
+  .my-login div.window-login{
+    margin-top: 0;
+    width:100%
+  }
+}
+@media only screen and (min-width: 480px){
+  .my-login div.window-login{
+    margin-top: 5%;
+    width:100%
+  }
+}
+@media only screen and (min-width: 768px){
+  .my-login div.window-login{
+    margin-top: 10%;
+    width:80%
+  }
+}
+@media only screen and (min-width: 992px){
+  .my-login div.window-login{
+    margin-top: 15%;
+    width:70%
+  }
+}
+@media only screen and (min-width: 1200px){
+  .my-login div.window-login{
+    margin-top: 8%;
+    width:60%
+  }
+}

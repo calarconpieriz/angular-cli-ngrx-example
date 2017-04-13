@@ -15,16 +15,16 @@ import { StoreDevToolsModule } from './components/store-devtools/module';
 import { UserEffects } from './effects/user';
 
 const STORE_DEV_TOOLS_IMPORTS = [];
-if (ENV === 'development' && !AOT &&
-  ['monitor', 'both'].includes(STORE_DEV_TOOLS) // set in constants.js file in project root
-) STORE_DEV_TOOLS_IMPORTS.push(...[
-  StoreDevtoolsModule.instrumentStore({
-    monitor: useLogMonitor({
-      visible: true,
-      position: 'right'
-    })
-  })
-]);
+// if (ENV === 'development' && !AOT &&
+//   ['monitor', 'both'].includes(STORE_DEV_TOOLS) // set in constants.js file in project root
+// ) STORE_DEV_TOOLS_IMPORTS.push(...[
+//   StoreDevtoolsModule.instrumentStore({
+//     monitor: useLogMonitor({
+//       visible: true,
+//       position: 'right'
+//     })
+//   })
+// ]);
 
 export const APP_IMPORTS = [
   EffectsModule.run(UserEffects),

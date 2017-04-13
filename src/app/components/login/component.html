@@ -1,0 +1,32 @@
+<section class="my-login" [class.authenticated]="user.access_token">
+  <div class="window-login">
+    <div class="logos-header">
+      <img src="./assets/logos/RC_Logo_blue_outline_R.png" alt="" class="rc-logo">
+      <img src="./assets/logos/white-logo.png" alt="" class="white-logo">
+      <img src="./assets/logos/celebTransparent.png" alt="" class="celebrity-logo">
+      <img src="./assets/logos/captain-club.png" alt="" class="capitain-logo">
+      <img src="./assets/logos/azamara-cruise-line-logo.png" alt="" class="azamara-logo">
+      <img src="./assets/logos/le-club-voyage-logo.png" alt="" class="voyage-logo">
+    </div>
+    <div class="presentation-text">
+      You can now log into Royal Caribbean Cruises, Celebrity Cruises, and Azamara Cruises sites and apps with the same email address
+      and password. Please assist us by taking a moment to review and update any information below that is not correct
+    </div>
+    <div class="login-region">
+      <form [formGroup]="form" (ngSubmit)="submitState()" autocomplete="off">
+        <div class="input-form">
+          <input formControlName="name" [placeholder]="nameLabel"><br>
+        </div>
+        <div class="input-form">
+          <input formControlName="passw" [placeholder]="passwordLabel" type="password" />
+        </div>
+        <div class="error-alert" [class.show-error]="user.error_message">
+          <small>{{user.error_message}}</small>
+        </div>
+        <button type="submit" class="btn btn-default" [class.loading]="user.loading">
+          <span>Login</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

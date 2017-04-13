@@ -45,17 +45,18 @@ const resetOnLogout = (reducer: Function) => {
 
 const DEV_REDUCERS = [stateSetter, storeFreeze];
 // set in constants.js file of project root
-if (['logger', 'both'].indexOf(STORE_DEV_TOOLS) !== -1 ) {
-    DEV_REDUCERS.push(storeLogger());
-}
+// if (['logger', 'both'].indexOf(STORE_DEV_TOOLS) !== -1 ) {
+//     DEV_REDUCERS.push(storeLogger());
+// }
 
 const developmentReducer = compose(...DEV_REDUCERS, resetOnLogout, combineReducers)(reducers);
 const productionReducer = compose(resetOnLogout, combineReducers)(reducers);
 
 export function rootReducer(state: any, action: any) {
-  if (ENV !== 'development') {
-    return productionReducer(state, action);
-  } else {
-    return developmentReducer(state, action);
-  }
+  return developmentReducer(state, action);
+  // if (ENV !== 'development') {
+  //   return productionReducer(state, action);
+  // } else {
+  //   return developmentReducer(state, action);
+  // }
 }
