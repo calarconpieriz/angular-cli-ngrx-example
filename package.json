@@ -17,7 +17,7 @@
     "@angular/core": "^2.3.1",
     "@angular/forms": "^2.3.1",
     "@angular/http": "^2.3.1",
-    "@angular/material": "^2.0.0-beta.3",
+    "@angular/material": "^2.0.0-alpha.11-3",
     "@angular/platform-browser": "^2.3.1",
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
@@ -35,11 +35,13 @@
     "ngrx-store-logger": "^0.1.7",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
+    "typescript": "^2.3.0-dev.20170413",
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
     "@angular/cli": "^1.0.0",
     "@angular/compiler-cli": "^2.3.1",
+    "@types/hammerjs": "^2.0.34",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.68",
     "codelyzer": "~2.0.0-beta.1",
