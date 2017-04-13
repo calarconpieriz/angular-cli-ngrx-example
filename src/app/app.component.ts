@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { views } from './app-nav-views';
 import { MOBILE } from './services/constants';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'my-app',
@@ -10,10 +11,7 @@ import { MOBILE } from './services/constants';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  // showMonitor = (ENV === 'development' && !AOT &&
-  //   ['monitor', 'both'].includes(STORE_DEV_TOOLS) // set in constants.js file in project root
-  // );
-  showMonitor = false;
+  showMonitor = (!environment.production);
   mobile = MOBILE;
   sideNavMode = MOBILE ? 'over' : 'side';
   views = views;
@@ -24,14 +22,14 @@ export class AppComponent {
   ) { }
 
   activateEvent(event) {
-    // if (ENV === 'development') {
-    //   console.log('Activate Event:', event);
-    // }
+    if (!environment.production) {
+      console.log('Activate Event:', event);
+    }
   }
 
   deactivateEvent(event) {
-    // if (ENV === 'development') {
-    //   console.log('Deactivate Event', event);
-    // }
+    if (!environment.production) {
+      console.log('Deactivate Event', event);
+    }
   }
 }
